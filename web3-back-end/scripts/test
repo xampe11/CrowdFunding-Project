@@ -1,0 +1,14 @@
+async function main() {
+    let deadLine = new Date()
+    deadLine.setDate(deadLine.getDate() + 2)
+    const deadLine_UnixTimeStamp = deadLine.getTime() / 1000
+
+    console.log(deadLine_UnixTimeStamp)
+}
+
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.error(error)
+        process.exit(1)
+    })
