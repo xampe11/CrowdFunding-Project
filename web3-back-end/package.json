@@ -8,7 +8,7 @@
     "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@openzeppelin/contracts": "^5.0.2",
     "@types/sinon-chai": "^3.2.3",
-    "chai": "^4.3.4",
+    "chai": "^4.3.7",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "ethers": "6.8.0",

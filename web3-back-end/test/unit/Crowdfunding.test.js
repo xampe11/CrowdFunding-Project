@@ -1,10 +1,10 @@
 const { expect, assert } = require("chai")
 const { network, deployments, ethers } = require("hardhat")
-const { developmentChains } = require("../../helper-hardhat-config")
+const { developmentChains } = require("../../helper-hardhat-config.js")
 const { time } = require("@nomicfoundation/hardhat-network-helpers")
-const { Transaction } = require("ethers")
 
 !developmentChains.includes(network.name)
+console.log("Test file loaded")
     ? describe.skip
     : describe("CrowdFunding Contract Unit Tests", function () {
           let crowdFunding, crowdFundingContract
@@ -46,6 +46,9 @@ const { Transaction } = require("ethers")
                   ).to.be.revertedWith("0")
 
                   const campaignList = await crowdFunding.getCampaigns()
+                  console.log(
+                      `address: ${deployer}\n title: ${TITLE}\n description: ${DESCRIPTION}\n target: ${FUND_TARGET}\n deadline: ${deadLine_UnixTimeStamp}\n image: ${image}`,
+                  )
                   assert(campaignList[0])
               })
               it("Returns error if the deadline date is in the past when trying to create a campaign", async function () {
@@ -74,20 +77,17 @@ const { Transaction } = require("ethers")
               })
           })
           describe("donateToCampaign", function () {
-              it("Updates the donations and donators list with the proper information", async function () {
-                  const firstCampaing = await crowdFunding.createCampaign(
-                      deployer,
-                      TITLE,
-                      DESCRIPTION,
-                      FUND_TARGET,
-                      deadLine_UnixTimeStamp,
-                      image,
-                  )
-                  firstCampaing.wait(1)
-                  const campaigns = await crowdFunding.getCampaigns()
-                  //const donationTx = await crowdFunding.donateToCampaign(BigInt(firstCampaing))
-
-                  console.log(firstCampaing.status)
+              it("Emits an event after a donation is done", async function () {
+                  expect(
+                      await crowdFunding.createCampaign(
+                          deployer,
+                          TITLE,
+                          DESCRIPTION,
+                          FUND_TARGET,
+                          deadLine_UnixTimeStamp,
+                          image,
+                      ),
+                  ).to.emit("DonatedToCampaign")
               })
           })
       })

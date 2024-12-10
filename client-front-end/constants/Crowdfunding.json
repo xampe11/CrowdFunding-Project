@@ -1,0 +1,443 @@
+[
+    { "type": "error", "inputs": [], "name": "Crowdfunding__DateMustBeInTheFuture" },
+    {
+        "type": "event",
+        "inputs": [
+            {
+                "name": "id",
+                "type": "uint256",
+                "baseType": "uint256",
+                "indexed": true,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "owner",
+                "type": "address",
+                "baseType": "address",
+                "indexed": true,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "baseType": "string",
+                "indexed": true,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "description",
+                "type": "string",
+                "baseType": "string",
+                "indexed": false,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "target",
+                "type": "uint256",
+                "baseType": "uint256",
+                "indexed": false,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "deadline",
+                "type": "uint256",
+                "baseType": "uint256",
+                "indexed": false,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "name": "CampaignCreated",
+        "anonymous": false
+    },
+    {
+        "type": "event",
+        "inputs": [
+            {
+                "name": "id",
+                "type": "uint256",
+                "baseType": "uint256",
+                "indexed": true,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "donator",
+                "type": "address",
+                "baseType": "address",
+                "indexed": true,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "amountDonated",
+                "type": "uint256",
+                "baseType": "uint256",
+                "indexed": false,
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "name": "DonatedToCampaign",
+        "anonymous": false
+    },
+    {
+        "type": "function",
+        "inputs": [
+            {
+                "name": "",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "name": "campaigns",
+        "constant": true,
+        "outputs": [
+            {
+                "name": "owner",
+                "type": "address",
+                "baseType": "address",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "title",
+                "type": "string",
+                "baseType": "string",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "description",
+                "type": "string",
+                "baseType": "string",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "target",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "deadline",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "amountCollected",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "image",
+                "type": "string",
+                "baseType": "string",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "stateMutability": "view",
+        "payable": false,
+        "gas": null
+    },
+    {
+        "type": "function",
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address",
+                "baseType": "address",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "_title",
+                "type": "string",
+                "baseType": "string",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "_description",
+                "type": "string",
+                "baseType": "string",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "_target",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "_deadline",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            },
+            {
+                "name": "_image",
+                "type": "string",
+                "baseType": "string",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "name": "createCampaign",
+        "constant": false,
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "payable": false,
+        "gas": null
+    },
+    {
+        "type": "function",
+        "inputs": [
+            {
+                "name": "_id",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "name": "donateToCampaign",
+        "constant": false,
+        "outputs": [],
+        "stateMutability": "payable",
+        "payable": true,
+        "gas": null
+    },
+    {
+        "type": "function",
+        "inputs": [],
+        "name": "getCampaigns",
+        "constant": true,
+        "outputs": [
+            {
+                "name": "",
+                "type": "tuple[]",
+                "baseType": "array",
+                "components": null,
+                "arrayLength": -1,
+                "arrayChildren": {
+                    "name": "",
+                    "type": "tuple",
+                    "baseType": "tuple",
+                    "components": [
+                        {
+                            "name": "owner",
+                            "type": "address",
+                            "baseType": "address",
+                            "components": null,
+                            "arrayLength": null,
+                            "arrayChildren": null
+                        },
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "baseType": "string",
+                            "components": null,
+                            "arrayLength": null,
+                            "arrayChildren": null
+                        },
+                        {
+                            "name": "description",
+                            "type": "string",
+                            "baseType": "string",
+                            "components": null,
+                            "arrayLength": null,
+                            "arrayChildren": null
+                        },
+                        {
+                            "name": "target",
+                            "type": "uint256",
+                            "baseType": "uint256",
+                            "components": null,
+                            "arrayLength": null,
+                            "arrayChildren": null
+                        },
+                        {
+                            "name": "deadline",
+                            "type": "uint256",
+                            "baseType": "uint256",
+                            "components": null,
+                            "arrayLength": null,
+                            "arrayChildren": null
+                        },
+                        {
+                            "name": "amountCollected",
+                            "type": "uint256",
+                            "baseType": "uint256",
+                            "components": null,
+                            "arrayLength": null,
+                            "arrayChildren": null
+                        },
+                        {
+                            "name": "image",
+                            "type": "string",
+                            "baseType": "string",
+                            "components": null,
+                            "arrayLength": null,
+                            "arrayChildren": null
+                        },
+                        {
+                            "name": "donators",
+                            "type": "address[]",
+                            "baseType": "array",
+                            "components": null,
+                            "arrayLength": -1,
+                            "arrayChildren": {
+                                "name": "",
+                                "type": "address",
+                                "baseType": "address",
+                                "components": null,
+                                "arrayLength": null,
+                                "arrayChildren": null
+                            }
+                        },
+                        {
+                            "name": "donations",
+                            "type": "uint256[]",
+                            "baseType": "array",
+                            "components": null,
+                            "arrayLength": -1,
+                            "arrayChildren": {
+                                "name": "",
+                                "type": "uint256",
+                                "baseType": "uint256",
+                                "components": null,
+                                "arrayLength": null,
+                                "arrayChildren": null
+                            }
+                        }
+                    ],
+                    "arrayLength": null,
+                    "arrayChildren": null
+                }
+            }
+        ],
+        "stateMutability": "view",
+        "payable": false,
+        "gas": null
+    },
+    {
+        "type": "function",
+        "inputs": [
+            {
+                "name": "_id",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "name": "getDonators",
+        "constant": true,
+        "outputs": [
+            {
+                "name": "",
+                "type": "address[]",
+                "baseType": "array",
+                "components": null,
+                "arrayLength": -1,
+                "arrayChildren": {
+                    "name": "",
+                    "type": "address",
+                    "baseType": "address",
+                    "components": null,
+                    "arrayLength": null,
+                    "arrayChildren": null
+                }
+            },
+            {
+                "name": "",
+                "type": "uint256[]",
+                "baseType": "array",
+                "components": null,
+                "arrayLength": -1,
+                "arrayChildren": {
+                    "name": "",
+                    "type": "uint256",
+                    "baseType": "uint256",
+                    "components": null,
+                    "arrayLength": null,
+                    "arrayChildren": null
+                }
+            }
+        ],
+        "stateMutability": "view",
+        "payable": false,
+        "gas": null
+    },
+    {
+        "type": "function",
+        "inputs": [],
+        "name": "numberOfCampaigns",
+        "constant": true,
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256",
+                "baseType": "uint256",
+                "components": null,
+                "arrayLength": null,
+                "arrayChildren": null
+            }
+        ],
+        "stateMutability": "view",
+        "payable": false,
+        "gas": null
+    }
+]
